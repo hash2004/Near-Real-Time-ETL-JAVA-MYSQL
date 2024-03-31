@@ -1,4 +1,4 @@
--- Q1 - Present total sales of all products supplied by each supplier with respect to quarter and
+--  - Present total sales of all products supplied by each supplier with respect to quarter and
 -- month using drill down concept.
 SELECT 
     p.supplierID,
@@ -25,7 +25,7 @@ ORDER BY
     Quarter,
     Month;
 
--- Q2 - Find total sales of product with respect to month using feature of rollup on month and
+--  - Find total sales of product with respect to month using feature of rollup on month and
 -- feature of dicing on supplier with name "DJI" and Year as "2019". You will use the
 -- grouping sets feature to achieve rollup. Your output should be sequentially ordered
 -- according to product and month.
@@ -63,7 +63,7 @@ ORDER BY
 LIMIT 5;
 
 
--- Q4 
+-- 
 SELECT
     p.productName,
     SUM(CASE WHEN MONTH(o.OrderDate) BETWEEN 1 AND 3 THEN o.QuantityOrdered * o.productPrice ELSE 0 END) AS Q1_Sales,
@@ -82,7 +82,7 @@ GROUP BY
 ORDER BY
     p.productName;
  
--- Q5
+-- 
 SELECT
     p.productName,
     AVG(o.QuantityOrdered * o.productPrice) AS AverageSales,
@@ -100,7 +100,7 @@ HAVING
  have significantly higher sales compared to their 
 typical performance.*/
 
--- Q6
+-- 
 CREATE VIEW STOREANALYSIS_VIEW AS
 SELECT StoreDimension.storeID AS STORE_ID,
        ProductDimension.ProductID AS PROD_ID,
@@ -112,8 +112,7 @@ JOIN StoreDimension ON ProductDimension.supplierID = StoreDimension.storeID
 GROUP BY StoreDimension.storeID, ProductDimension.ProductID;
 
 SELECT * FROM STOREANALYSIS_VIEW;
-
--- Q7
+-- 
 SELECT MONTH(o.OrderDate) AS Month,
        YEAR(o.OrderDate) AS Year,
        p.productName AS ProductName,
@@ -125,7 +124,7 @@ WHERE s.storeName = 'Tech Haven'
 GROUP BY YEAR(o.OrderDate), MONTH(o.OrderDate), p.productName
 ORDER BY Year, Month, TotalSales DESC;
 
--- Q8
+-- 
 CREATE VIEW SUPPLIER_PERFORMANCE_VIEW AS
 SELECT YEAR(o.OrderDate) AS Year,
        MONTH(o.OrderDate) AS Month,
@@ -139,7 +138,7 @@ GROUP BY YEAR(o.OrderDate), MONTH(o.OrderDate), p.supplierID, s.supplierName;
 
 SELECT * FROM SUPPLIER_PERFORMANCE_VIEW;
 
--- Q9
+-- 
 SELECT cd.CustomerID, cd.CustomerName, COUNT(DISTINCT ProductID) AS UniqueProductsPurchased
 FROM OrderFacts
 JOIN CustomerDimension cd ON OrderFacts.CustomerID = cd.CustomerID
@@ -149,7 +148,7 @@ ORDER BY UniqueProductsPurchased DESC
 LIMIT 5;
 
 
--- Q10
+-- 
 CREATE VIEW CUSTOMER_STORE_SALES_MV AS
 SELECT 
     s.storeID,
