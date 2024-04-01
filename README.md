@@ -56,5 +56,9 @@ This project encompasses the development and execution of an ETL (Extract, Trans
 - Designing and querying a multi-dimensional data warehouse to support OLAP.
 
 ## License
+This project is licensed under the [MIT License](https://opensource.org/license/MIT)- see the LICENSE file for details.
+
+
+## License
 This project is open-source and available under the MIT License.
 
