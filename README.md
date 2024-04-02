@@ -2,7 +2,7 @@
 This project encompasses the development and execution of an ETL (Extract, Transform, Load) process, using Java, threads, and MySQL.
 
 ## Project Overview
-This project encompasses the development and execution of an ETL (Extract, Transform, Load) process, alongside the setup and utilization of a data warehouse environment. It involves extracting data from transactional and master data sources, transforming this data through a hybrid join process, and loading the integrated data into a data warehouse for OLAP (Online Analytical Processing) queries.
+This project encompasses the development and execution of an ETL (Extract, Transform, Load) process, alongside the setup and utilization of a data warehouse environment. It involves extracting data from transactional and master data sources, transforming this data through a join process, and loading the integrated data into a data warehouse for OLAP (Online Analytical Processing) queries.
 
 ## Getting Started
 
